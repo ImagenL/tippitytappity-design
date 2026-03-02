@@ -20,4 +20,13 @@ classDiagram
         + add_badge(title: string)
         + get_badges() vector~string~
   }
+
+  class allPhrases{
+        - phrases: vector~vector~string~~
+        + randPhrases(length: int) vector~vector~string~~
+  }
+  class typingTest{
+  - 
+  + compareTyped(userInput: string) int
+  }
 ```
