@@ -8,6 +8,8 @@ tippitytappity is a program to practice typing
 ```mermaid
 classDiagram
   ExampleParent <|-- ExampleChild
+  previousTest --> user
+  allPhrases --> typingTest
   class ExampleParent{
         - name: string
         - email: string
@@ -26,7 +28,25 @@ classDiagram
         + randPhrases(length: int) vector~vector~string~~
   }
   class typingTest{
-  - 
-  + compareTyped(userInput: string) int
+      - startTime: int
+      - endTime: int
+      - usedPhrases: vector~vector~string~~
+      - userInput: string
+      + compareTyped(userInput: string) int
+      + getPhrases(length: int) vector~vector~string~~
+      + setStartTime()
+      + setEndTime()
   }
+  class previousTest{
+      - accuracy: int
+      - speed: int
+      + displayAccuracy()
+      + displaySpeed()
+  }
+  class user{
+      - userID: int
+      - previousTests: vector~previousTest~
+
+  }
+
 ```
